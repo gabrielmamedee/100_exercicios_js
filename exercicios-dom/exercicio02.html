@@ -1,0 +1,30 @@
+<!--Crie uma página que verifique se um número é primo. O usuário deve inserir um número e a página deve exibir se ele é primo ou não.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Verificador de número primo</title>
+</head>
+<body>
+    <h1>Verificador de número primo</h1>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="verificarPrimo()">Verificar</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarPrimo() {
+            const num = parseInt(document.getElementById("numero").value);
+            const res = document.getElementById("resultado");
+            if (num < 2) return res.innerText = "Não é primo"
+            for (let i = 2; i < num; i++) {
+              if (num % i === 0) {
+                res.innerText = "Não é primo"
+                return
+              }
+            }
+            res.innerText = "É primo"
+        }
+    </script>
+</body>
+</html>

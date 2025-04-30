@@ -1,0 +1,29 @@
+<!--Crie uma página que calcule a soma dos números de 1 a N, onde N é um valor inserido pelo usuário.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - soma de 1 até n</title>
+</head>
+<body>
+    <h1>Soma de 1 até N</h1>
+    <input type="number" id="numero" placeholder="Digite o número">
+    <button onclick="somar1AteN()">Somar</button>
+    <h3 id="resp"></h3>
+
+    <script>
+        function somar1AteN() {
+            console.log("Executando a funcao")
+            const numero = parseInt(document.getElementById("numero").value);
+
+            let soma = 0;
+            for (let i = 1; i <= numero; i++){
+                soma += i;
+            }
+
+            document.getElementById("resp").innerText = `Soma: ${soma}`;
+        }
+    </script>
+</body>
+</html>
