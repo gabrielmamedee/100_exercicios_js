@@ -1,0 +1,34 @@
+<!--Crie uma página que calcule a sequência de Fibonacci até um número N inserido pelo usuário.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 - Calculadora de Fibonacci</title>
+</head>
+<body>
+    <h1>Calculadora de Fibonacci</h1>
+    <input type="number" id="numero" placeholder="Digite o número">
+    <button onclick="calcular()">Calcular</button>
+    <h3 id="resp"></h3>
+    <script>
+        function calcular(){
+            const num = parseInt(document.getElementById("numero").value);
+            const resp = document.getElementById("resp");
+            if(isNaN(num) || num < 0) {
+                resp.innerText = `Por favor, digite um número válido (maior ou igual a 0).`;
+                return;
+            }
+
+            let fib = [0, 1];
+
+            while (fib[fib.length - 1] + fib[fib.length - 2] <= num) {
+                fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+            }
+
+            const resultado = fib.filter(n => n <= num);
+            resp.innerText = `Sequência de Fibonacci até ${num}: ${resultado.join(", ")}`;
+        }
+    </script>
+</body>
+</html>

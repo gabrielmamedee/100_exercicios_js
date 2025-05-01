@@ -1,0 +1,22 @@
+<!--Crie uma página que ordene uma lista de números inseridos pelo usuário.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 - Ordenador de números</title>
+</head>
+<body>
+    <h1>Ordenador de números</h1>
+    <input type="text" id="listaNumeros" placeholder="Ex: 5,3,8,2">
+    <button onclick="ordenar()">Ordenar</button>
+    <h3 id="resp"></h3>
+    <script>
+        function ordenar() {
+            const entrada = document.getElementById("listaNumeros").value;
+            const lista = entrada.split(",").map(n => parseFloat(n.trim())).sort((a, b) => a - b);
+            document.getElementById("resp").innerText = `Ordenado: ${lista.join(", ")}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!--Crie uma página que verifique se uma palavra é um palíndromo.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 - Verifica palavra palíndromo</title>
+</head>
+<body>
+    <h1>Verifica palavra palíndromo</h1>
+    <input type="text" id="palavra" placeholder="Digite a palavra">
+    <button onclick="verificaPalindromo()">Verificar</button>
+    <h3 id="resp"></h3>
+    <script>
+        function verificaPalindromo(){
+            const palavra = document.getElementById("palavra").value;
+            let palavraInvertida = palavra.split("").reverse().join("");
+            const resposta = palavra === palavraInvertida ? "É um palindromo" : "Não é um palindromo";
+            document.getElementById("resp").innerText = `${resposta}`;
+        }
+    </script>
+</body>
+</html>
