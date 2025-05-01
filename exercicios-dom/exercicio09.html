@@ -1,0 +1,23 @@
+<!--Crie uma página que receba um texto e conte o número de vogais e consoantes.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 - Contador de vogais e consoantes</title>
+</head>
+<body>
+    <h1>Contador de vogais e consoantes</h1>
+    <textarea id="texto" placeholder="Escreva um texto"></textarea>
+    <button onclick="contarVogaisConsoantes()">Contar</button>
+    <h3 id="resp"></h3>
+    <script>
+        function contarVogaisConsoantes(){
+            const texto = document.getElementById("texto").value.toLowerCase();
+            const vogais = texto.match(/[aeiou]/g) || []
+            const consoantes = texto.match(/[bcdfghjklmnpqrstvwxyz]/g) || []
+            document.getElementById("resp").innerText = `Vogais: ${vogais.length}, Consoantes: ${consoantes.length}`
+        }
+    </script>
+</body>
+</html>

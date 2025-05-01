@@ -1,0 +1,22 @@
+<!--Crie uma página que simule o lançamento de dois dados e exiba o resultado da soma. Adicione um botão para lançar novamente.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08 - Lançamento de dados</title>
+</head>
+<body>
+   <h1>Lançmento de dados</h1>
+   <button onclick="jogarDados()">Lançar</button>
+    <p id="resultado"></p>
+    <script>
+        function jogarDados() {
+            const dado1 = Math.floor(Math.random() * 6) + 1
+            const dado2 = Math.floor(Math.random() * 6) + 1
+            const soma = dado1 + dado2
+            document.getElementById("resultado").innerText = `Dado 1: ${dado1}, Dado 2: ${dado2}, Soma: ${soma}`
+        }
+    </script>
+</body>
+</html>

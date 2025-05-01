@@ -1,0 +1,22 @@
+<!--Crie uma página que converta um valor de decimal para binário.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 - Conversor decimal para binário</title>
+</head>
+<body>
+    <h1>Conversor decimal para binário</h1>
+    <input type="number" id="numero" placeholder="Digite o número">
+    <button onclick="converterEmBinario()">Converter</button>
+    <h3 id="resp"></h3>
+    <script>
+        function converterEmBinario(){
+            const num = Number(document.getElementById("numero").value);
+            const binario = num.toString(2);
+            document.getElementById("resp").innerText = `Binário: ${binario}`;
+        }
+    </script>
+</body>
+</html>
